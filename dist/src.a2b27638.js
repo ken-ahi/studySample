@@ -118,13 +118,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/index.js":[function(require,module,exports) {
-var _console;
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 /**
  * const、letの変数宣言
  */
@@ -285,13 +278,69 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 // console.log(num1);
 
 // console.log(num2);
-// console.log(...arr3);
+// // console.log(...arr3);
 
-// 配列のコピーや結合
-var arr4 = [10, 20];
-var arr5 = [30, 40];
-var arr6 = [].concat(arr4); //配列のコピー
-(_console = console).log.apply(_console, _toConsumableArray(arr6));
+// // 配列のコピーや結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+// const arr6 = [...arr4]; //配列のコピー
+// console.log(arr6);
+
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
+
+// // // ＝で配列コピーはダメなのか？＝＞だめ。
+// // const arr8 = arr4;
+// // arr8[0] = 100;
+// // console.log(arr8);//→[100,20]
+// // console.log(arr4);//→[100,20]こっちも添え字0の箇所が１００でアップデートされている
+
+// const arr9 = [...arr4]; //スプレッド構文で配列のコピー(継承の方が分かりやすい)
+// arr9[0] = 100;
+// console.log(arr9);//→[100, 20]
+// console.log(arr4);//→[10, 20]
+
+/**
+ * mapやfilterを使った配列の処理
+ *
+ */
+var nameArr = ["田中", "やまだ", "中田"];
+// 従来はfor文
+// for (let index = 0; index < nameArr.length; index++){
+// console.log(`${index}番目は${nameArr[index]}です`);
+// }
+
+// const nameArr2 = nameArr.map((name)=>{
+//   return name;
+// })
+
+// console.log(nameArr2);
+
+// nameArr.map((name, index)=> console.log(`${index+1}番目は${name}です`));
+
+// // フィルターReturn文である条件の配列だけ抽出するときに使用
+// const numArr = [1,2,3,4,5];
+
+// const newNumArr = numArr.filter((num)=>{
+//   return num % 2 === 1;
+// });
+
+// console.log(newNumArr);
+
+// const newNameArr = nameArr.map((name)=>{
+//   if(name === "中田"){
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// })
+
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+// ある条件 ? 条件がtrueの時；条件がflaseの時
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

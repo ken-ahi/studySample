@@ -158,12 +158,66 @@
 // console.log(num1);
 
 // console.log(num2);
-// console.log(...arr3);
+// // console.log(...arr3);
 
-// 配列のコピーや結合
-const arr4 = [10, 20];
-const arr5 = [30, 40];
-const arr6 = [...arr4]; //配列のコピー
-console.log(...arr6);
+// // 配列のコピーや結合
+// const arr4 = [10, 20];
+// const arr5 = [30, 40];
+// const arr6 = [...arr4]; //配列のコピー
+// console.log(arr6);
 
+// const arr7 = [...arr4, ...arr5];
+// console.log(arr7);
 
+// // // ＝で配列コピーはダメなのか？＝＞だめ。
+// // const arr8 = arr4;
+// // arr8[0] = 100;
+// // console.log(arr8);//→[100,20]
+// // console.log(arr4);//→[100,20]こっちも添え字0の箇所が１００でアップデートされている
+
+// const arr9 = [...arr4]; //スプレッド構文で配列のコピー(継承の方が分かりやすい)
+// arr9[0] = 100;
+// console.log(arr9);//→[100, 20]
+// console.log(arr4);//→[10, 20]
+
+/**
+ * mapやfilterを使った配列の処理
+ *
+ */
+const nameArr = ["田中", "やまだ", "中田"];
+// 従来はfor文
+// for (let index = 0; index < nameArr.length; index++){
+// console.log(`${index}番目は${nameArr[index]}です`);
+// }
+
+// const nameArr2 = nameArr.map((name)=>{
+//   return name;
+// })
+
+// console.log(nameArr2);
+
+// nameArr.map((name, index)=> console.log(`${index+1}番目は${name}です`));
+
+// // フィルターReturn文である条件の配列だけ抽出するときに使用
+// const numArr = [1,2,3,4,5];
+
+// const newNumArr = numArr.filter((num)=>{
+//   return num % 2 === 1;
+// });
+
+// console.log(newNumArr);
+
+// const newNameArr = nameArr.map((name)=>{
+//   if(name === "中田"){
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// })
+
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+// ある条件 ? 条件がtrueの時；条件がflaseの時
