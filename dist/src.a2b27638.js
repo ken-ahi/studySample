@@ -340,7 +340,9 @@ var nameArr = ["田中", "やまだ", "中田"];
 /**
  * 三項演算子
  */
-// ある条件 ? 条件がtrueの時；条件がflaseの時
+// ある条件 ? 条件がtrueの時：条件がflaseの時
+var val1 = 1 > 0 ? 'trueです' : 'falseです';
+console.log(val1);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
