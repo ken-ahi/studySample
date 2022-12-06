@@ -223,3 +223,4 @@ const nameArr = ["田中", "やまだ", "中田"];
 // ある条件 ? 条件がtrueの時：条件がflaseの時
 const val1 = 1 > 0 ? "trueです" : "falseです";
 console.log(val1);
+
